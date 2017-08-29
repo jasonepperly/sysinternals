@@ -56,6 +56,9 @@ file&gt; | -u | -x &lt;dump file&gt; &lt;image file&gt; \[arguments\]
 | **-l** | Display the debug logging of the process. |
 | **-m** | Memory commit threshold in MB at which to create a dump. |
 | **-ma** | Write a dump file with all process memory. The default dump format only includes thread and  handle information. |
+| **-mc** | Write a 'Custom' dump file. Include memory defined by the specified MINIDUMP_TYPE mask (Hex).|
+| **-md** | Write a 'Callback' dump file. Include memory defined by the MiniDumpWriteDump callback routine named MiniDumpCallbackRoutine of the specified DLL.|
+| **-mk** | Also write a 'Kernel' dump file. Includes the kernel stacks of the threads in the process. OS doesn't support a kernel dump (-mk) when using a clone (-r). When using multiple dump sizes, a kernel dump is taken for each dump size.|
 | **-ml** | Trigger when memory commit drops below specified MB value. |
 | **-mp** | Write a dump file with thread and handle information, and all read/write process memory. To minimize dump size, memory areas larger than 512MB are searched   for, and if found, the largest area is excluded. A memory area  is the collection of same sized  memory allocation areas. The removal of this (cache) memory reduces Exchange and SQL Server  dumps by over 90%. |
 | **-n** | Number of dumps to write before  exiting. |
